@@ -1,8 +1,11 @@
 <?php
+
     namespace AppData\Model;
     class Grupo
+
       {
         //private $nombre, $contraseña;
+
         private $id_grupo,$desc_grupo,$conexion;
         public function __construct()
         {
@@ -38,10 +41,12 @@
       $this->conexion->QuerySimple($sql);
     }
 
-    function insertar(){
+    function insert(){
     //$sql= "INSERT INTO grupos(desc_grupo) VALUES('desc_grupo')";
-  //  $sql "INSERT INTO grupos (desc_grupo) VALUES ('desc_grupo'[0])";
-    //      $this->conexion->QuerySimple($sql);
+  //  $sql "INSERT INTO grupos ('desc_grupo) VALUES ('desc_grupo')";
+  //$sql="INSERT INTO grupos (id_grupo,dec_grupos) VALUES ('$id_grupo[0]','$desc_grupo[0]')";
+  $sql="INSERT INTO grupos (id_grupo,desc_grupo) VALUES ('.$id_grupo.','.$desc_grupo.')";
+         $this->conexion->QuerySimple($sql);
     }
       }
 

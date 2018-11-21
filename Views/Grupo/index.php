@@ -96,7 +96,7 @@ $(document).ready(function(){
         data=JSON.parse(data)
         $("#id_grupo").val(data['id_grupo'])
         $("#desc_grupo").val(data['desc_grupo'])
-        $("#myModal").modal('show');
+        $("#exampleModal").modal('show');
       }
     })
   })
@@ -123,6 +123,11 @@ $(document).ready(function(){
                     <div class="form-group">
                         <input type="text" class="form-control"
                                id="desc_grupo" name="desc_grupo"></input>
+                        <label for="desc_grupo">ID</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"
+                               id="desc_grupo" name="desc_grupo"></input>
                         <label for="desc_grupo">Numero del Grupo</label>
                     </div>
                 </form>
@@ -138,19 +143,19 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".insertar").click(function(){
     var id=$(this).attr('id_grupo');
-    $.post("<?php echo URL ?>Grupo/insertar/"+id_grupo,{},function(data){
+    $.post("<?php echo URL ?>Grupo/get/"+id_grupo,{},function(data){
       if(data){
         data=JSON.parse(data)
         $("#id_grupo").val(data['id_grupo'])
         $("#desc_grupo").val(data['desc_grupo'])
-        $("#myModal").modal('show');
+        $("#Modalinsertar1").modal('show');
       }
     })
   })
   $(".insertar").click(function(){
     var arreglo=$("#insercion").serializeArray();
     $.post("<?php echo URL ?>Grupo/insertar/",{arreglo:arreglo},function(data){
-      window.location.href="<?php echo URL ?>Grupo/index";
+    //  window.location.href="<?php echo URL ?>Grupo/index";
     })
   })
 })

@@ -52,10 +52,10 @@
         }
         public function delete(){
 			$sql="DELETE FROM usuarios
-			WHERE id_usuario='{$this->id}'";
+			WHERE id_usuario='{$this->id[0]}'";
 			$this->conexion->QuerySimple($sql);
 			$sql="DELETE FROM personas
-			WHERE id_usuario='{$this->id}'";
+			WHERE id_usuario='{$this->id[0]}'";
 			$this->conexion->QuerySimple($sql);
 		}
         public function updatePer(){

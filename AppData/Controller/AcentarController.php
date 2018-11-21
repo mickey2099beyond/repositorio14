@@ -17,7 +17,7 @@
 
 }
     function eliminar($id){
-			$this->acentar->set("id",$id);
+			$this->acentar->set("id",$id[0]);
 			$this->acentar->delete();
 			?>
 			<script type="text/javascript">
@@ -44,17 +44,17 @@
 		}
 		function edit(){
 			$data=$_POST['arreglo'];
-			$this->ver->set("id",$data[0]['value']);
-			$this->ver->set("nombre_per",$data[1]['value']);
-			$this->ver->set("ap",$data[2]['value']);
-			$this->ver->set("am",$data[3]['value']);
-			$this->ver->updatePer();
+			$this->acentar->set("id",$data[0]['value']);
+			$this->acentar->set("nombre_per",$data[1]['value']);
+			$this->acentar->set("ap",$data[2]['value']);
+			$this->acentar->set("am",$data[3]['value']);
+			$this->acentar->updatePer();
       ?>
       <script type="text/javascript">
         $(document).ready(function(){
           swal({
             title: "Listo !!!!",
-            text: "Eliminado correctamente",
+            text: "Se ha editado la informacion correctamente",
             timer: 2000
           });
           setTimeout(function(){
